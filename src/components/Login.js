@@ -4,9 +4,13 @@ import { auth, provider } from '../firebase'
 
 const Login = () => {
 
-  const loginWithGoogle = () => {
+  const loginWithGoogle = (setIsAuth) => {
+    //Googleでログイン
     signInWithPopup(auth, provider).then((result) => {
+      console.log("ログイン成功")
       console.log(result)
+      localStorage.setItem("isAuth", true);
+      setIsAuth(true);
     });
   }
 

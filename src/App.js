@@ -5,16 +5,20 @@ import Login from './components/Login';
 import Logout from './components/Logout';
 import Createpost from './components/Createpost';
 import Navbar from './components/Navbar';
+import { useState } from 'react';
 
 
 function App() {
+  const [isAuth, setIsAuth] = useState(false);
+
+
   return (
     <Router>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/createpost" element={<Createpost />}></Route>
-        <Route path="/login" element={<Login />}></Route>
+        <Route path="/login" element={<Login setIsAuth={setIsAuth}/>}></Route>
         <Route path="/logout" element={<Logout />}></Route>
       </Routes>
     </Router>
