@@ -3,18 +3,13 @@ import React from 'react'
 import { auth, provider } from '../firebase'
 
 const Login = () => {
+
   const loginWithGoogle = () => {
-
     signInWithPopup(auth, provider).then((result) => {
-      
-
-
-    }).catch
-
+      console.log(result)
+    });
   }
-}
 
-const Login = () => {
   return (
     <div>
       <p>ログインして始める</p>
