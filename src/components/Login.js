@@ -1,16 +1,20 @@
 import { signInWithPopup } from 'firebase/auth'
 import React from 'react'
 import { auth, provider } from '../firebase'
+import { useNavigate } from 'react-router-dom'
 
-const Login = () => {
+const Login = ({setIsAuth}) => {
 
-  const loginWithGoogle = (setIsAuth) => {
+  const navigate = useNavigate();
+
+  const loginWithGoogle = () => {
     //Googleでログイン
     signInWithPopup(auth, provider).then((result) => {
       console.log("ログイン成功")
       console.log(result)
-      localStorage.setItem("isAuth", true);
-      setIsAuth(true);
+      localStorage.setItem("isAuth", true)
+      setIsAuth(true)
+      navigate("/")
     });
   }
 

@@ -11,7 +11,6 @@ import { useState } from 'react';
 function App() {
   const [isAuth, setIsAuth] = useState(false);
 
-
   return (
     <Router>
       <Navbar />
