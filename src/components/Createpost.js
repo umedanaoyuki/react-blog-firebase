@@ -11,12 +11,12 @@ const Createpost = () => {
     await addDoc(collection(db, "posts"), {
       title: title,
       postText: postText,
-      authorName: {
+      author: {
         userName: auth.currentUser.displayName,
         id: auth.currentUser.uid
       }
-    })
-  }
+      })
+    }
 
 
   return (
