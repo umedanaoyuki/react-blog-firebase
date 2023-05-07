@@ -17,8 +17,7 @@ const Createpost = () => {
       }
       })
     }
-
-
+    
   return (
     <div className="createPostPage">
       <div className="postContainer">
