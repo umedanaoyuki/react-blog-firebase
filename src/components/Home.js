@@ -13,6 +13,7 @@ function Home() {
 
         console.log(data.log);
         console.log(data.docs.map((doc) => ({doc})));
+        //ここの取り出し方は難しい
         console.log(data.docs.map((doc) => ({...doc.data(), id: doc.id})));
     };
     getPosts();
