@@ -12,7 +12,7 @@ const Logout = ({setIsAuth}) => {
     signOut(auth).then(() => {
       console.log("ログアウト実行")
       localStorage.clear();
-      //setIsAuth(false);
+      setIsAuth(false);
       navigate("/login");
     });
   }
